@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BharatVista AI | India Digital Tour Archive</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="tag">AI Powered India Tourism Archive</p>
+      <h1>BharatVista AI</h1>
+      <p>
+        Explore India state-wise, UT-wise, city-wise, and district-wise — including art,
+        culture, heritage foods, history, GI tags, handicrafts, and unique local products.
+      </p>
+      <a href="#archive" class="btn-primary">Start Exploring</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="archive" class="panel">
+      <h2>Digital Archive Explorer</h2>
+      <div class="filters">
+        <label>
+          State / UT
+          <select id="stateFilter">
+            <option value="all">All</option>
+          </select>
+        </label>
+        <label>
+          City
+          <select id="cityFilter">
+            <option value="all">All</option>
+          </select>
+        </label>
+        <label>
+          District
+          <select id="districtFilter">
+            <option value="all">All</option>
+          </select>
+        </label>
+        <label>
+          Search by culture, food, GI tag...
+          <input id="keywordFilter" type="text" placeholder="e.g. Channapatna toys, Banarasi, tea" />
+        </label>
+      </div>
+      <div id="resultMeta" class="result-meta"></div>
+      <div id="archiveGrid" class="archive-grid"></div>
+    </section>
+
+    <section class="panel bot-panel">
+      <h2>AI Tour Assistant</h2>
+      <p>Ask anything about Indian states/UTs, cities, districts, food, culture, GI tags, or unique products.</p>
+      <div id="chatWindow" class="chat-window">
+        <div class="msg bot">Namaste! I can help you plan and discover India's heritage by location or theme.</div>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" type="text" placeholder="Ask: What is unique in Kutch district?" required />
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built as a digital archive concept for India tourism with AI-style guided responses.</p>
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>
