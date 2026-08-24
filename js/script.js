@@ -74,6 +74,27 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 
+  /* ---------- Pricing category tabs ---------- */
+  const pricingTabs = document.querySelectorAll('.pricing-tab');
+  const pricingPanels = document.querySelectorAll('.pricing-panel');
+
+  pricingTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-target');
+
+      pricingTabs.forEach(t => {
+        t.classList.toggle('active', t === tab);
+        t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+      });
+
+      pricingPanels.forEach(panel => {
+        const isTarget = panel.id === target;
+        panel.classList.toggle('active', isTarget);
+        panel.hidden = !isTarget;
+      });
+    });
+  });
+
   /* ---------- FAQ accordion ---------- */
   const accordionItems = document.querySelectorAll('.accordion-item');
 

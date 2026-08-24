@@ -321,6 +321,31 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
 .process-step p { color: var(--ink-500); font-size: 0.92rem; }
 
 /* ---------- Pricing ---------- */
+.pricing-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+.pricing-tab {
+  padding: 11px 22px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: #fff;
+  color: var(--ink-700);
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.pricing-tab:hover { border-color: var(--blue-500); color: var(--blue-600); }
+.pricing-tab.active { background: var(--navy-800); border-color: var(--navy-800); color: #fff; }
+
+.pricing-panel { display: none; }
+.pricing-panel.active { display: block; }
+.pricing-panel-sub { text-align: center; color: var(--ink-500); font-size: 0.92rem; margin-bottom: 28px; }
+
 .pricing-grid { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
 .pricing-card {
   padding: 36px 30px;
@@ -346,7 +371,7 @@ h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
 }
 .pricing-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
 .price { font-family: var(--font-head); font-size: 2.2rem; font-weight: 800; color: var(--navy-900); margin-bottom: 6px; }
-.price span { font-size: 0.95rem; font-weight: 500; color: var(--ink-500); }
+.price span { display: block; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--ink-500); margin-top: 2px; }
 .pricing-sub { color: var(--ink-500); font-size: 0.88rem; margin-bottom: 20px; }
 .pricing-list { flex: 1; display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; font-size: 0.92rem; }
 .pricing-note { text-align: center; margin-top: 34px; color: var(--ink-500); }
@@ -535,6 +560,8 @@ html.js [data-reveal].in-view { opacity: 1; transform: translateY(0); }
 @media (max-width: 640px) {
   .section { padding: 64px 0; }
   .services-grid, .pricing-grid, .testimonial-track, .process-grid { grid-template-columns: 1fr; }
+  .pricing-tabs { flex-direction: column; align-items: stretch; }
+  .pricing-tab { text-align: center; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
   .about-points { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
